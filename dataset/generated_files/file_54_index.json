@@ -1,0 +1,16 @@
+{
+  "filename": "nameeven.xlsx",
+  "path": "/education/that/nameeven.xlsx",
+  "sizekB": 4989,
+  "last_modified_date": "2025-10-16",
+  "creation_date": "2024-12-07",
+  "content_chunks": [
+    "name,event,score\nJohn,football,3\nLisa,tennis,2\ndesigner,collection,season\nChanel,Spring,2023",
+    "name,event,score\nJohn,football,3\nLisa,tennis,2\ndesigner,collection,season\nChanel,Spring,2023"
+  ],
+  "file_type": "xlsx",
+  "tags": [
+    "sport",
+    "fashion"
+  ]
+}

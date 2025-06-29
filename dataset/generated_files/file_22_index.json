@@ -1,0 +1,17 @@
+{
+  "filename": "athlete.txt",
+  "path": "/rest/athlete.txt",
+  "sizekB": 7626,
+  "last_modified_date": "2017-08-07",
+  "creation_date": "2003-03-03",
+  "content_chunks": [
+    "Athlete athlete athlete basketball athlete tennis. Engine model model model. Scene scene director director.",
+    "Tennis tennis championship football football athlete football. Engine engine speed race model. Scene actor scene actor."
+  ],
+  "file_type": "txt",
+  "tags": [
+    "sport",
+    "cars",
+    "cinema"
+  ]
+}

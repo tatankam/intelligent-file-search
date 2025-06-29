@@ -1,0 +1,15 @@
+{
+  "filename": "athlete.txt",
+  "path": "/drop/expect/athlete.txt",
+  "sizekB": 9017,
+  "last_modified_date": "2019-12-11",
+  "creation_date": "2004-06-06",
+  "content_chunks": [
+    "Athlete football championship football football.",
+    "Championship basketball tennis football."
+  ],
+  "file_type": "txt",
+  "tags": [
+    "sport"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "filename": "titledir.xlsx",
+  "path": "/manage/titledir.xlsx",
+  "sizekB": 8222,
+  "last_modified_date": "2016-10-13",
+  "creation_date": "2008-01-27",
+  "content_chunks": [
+    "title,director,year\nInception,Christopher Nolan,2010\ndesigner,collection,season\nChanel,Spring,2023",
+    "title,director,year\nInception,Christopher Nolan,2010\ndesigner,collection,season\nChanel,Spring,2023",
+    "title,director,year\nInception,Christopher Nolan,2010\ndesigner,collection,season\nChanel,Spring,2023"
+  ],
+  "file_type": "xlsx",
+  "tags": [
+    "cinema",
+    "fashion"
+  ]
+}

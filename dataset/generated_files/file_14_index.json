@@ -1,0 +1,16 @@
+{
+  "filename": "titledir.xlsx",
+  "path": "/environment/close/titledir.xlsx",
+  "sizekB": 3156,
+  "last_modified_date": "2022-10-04",
+  "creation_date": "2003-12-08",
+  "content_chunks": [
+    "title,director,year\nInception,Christopher Nolan,2010",
+    "title,director,year\nInception,Christopher Nolan,2010",
+    "title,director,year\nInception,Christopher Nolan,2010"
+  ],
+  "file_type": "xlsx",
+  "tags": [
+    "cinema"
+  ]
+}

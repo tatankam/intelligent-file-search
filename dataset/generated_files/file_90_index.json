@@ -1,0 +1,16 @@
+{
+  "filename": "titledir.xlsx",
+  "path": "/point/effect/us/titledir.xlsx",
+  "sizekB": 718,
+  "last_modified_date": "2017-05-22",
+  "creation_date": "2005-08-03",
+  "content_chunks": [
+    "title,director,year\nInception,Christopher Nolan,2010\nmodel,brand,year\nModel 3,Tesla,2022",
+    "title,director,year\nInception,Christopher Nolan,2010\nmodel,brand,year\nModel 3,Tesla,2022"
+  ],
+  "file_type": "xlsx",
+  "tags": [
+    "cars",
+    "cinema"
+  ]
+}
