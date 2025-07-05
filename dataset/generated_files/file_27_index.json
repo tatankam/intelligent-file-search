@@ -1,17 +1,16 @@
 {
-  "filename": "dress.txt",
-  "path": "/i/dress.txt",
-  "sizekB": 2896,
-  "last_modified_date": "2016-02-13",
-  "creation_date": "2014-10-06",
+  "filename": "award.pdf",
+  "path": "/financial/under/three/award.pdf",
+  "sizekB": 8383,
+  "last_modified_date": "2011-12-16",
+  "creation_date": "2001-11-24",
   "content_chunks": [
-    "Dress trend trend runway. Championship athlete championship tennis football.",
-    "Model model designer designer runway dress runway dress. Tennis football tennis championship.",
-    "Runway designer runway. Tennis basketball athlete basketball tennis basketball football athlete."
+    "Award movie scene director scene movie. Football basketball football basketball basketball athlete basketball. Speed model model model model model."
   ],
-  "file_type": "txt",
+  "file_type": "pdf",
   "tags": [
-    "fashion",
-    "sport"
+    "cinema",
+    "sport",
+    "cars"
   ]
 }

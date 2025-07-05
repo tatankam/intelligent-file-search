@@ -1,14 +1,16 @@
 {
-  "filename": "car.txt",
-  "path": "/civil/worry/car.txt",
-  "sizekB": 833,
-  "last_modified_date": "2008-01-21",
-  "creation_date": "2002-04-26",
+  "filename": "scene.txt",
+  "path": "/room/eye/medical/scene.txt",
+  "sizekB": 926,
+  "last_modified_date": "2025-08-13",
+  "creation_date": "2012-07-11",
   "content_chunks": [
-    "Car engine car."
+    "Scene scene movie director actor award director.",
+    "Movie actor director.",
+    "Scene movie award award movie award director movie."
   ],
   "file_type": "txt",
   "tags": [
-    "cars"
+    "cinema"
   ]
 }

@@ -1,15 +1,14 @@
 {
-  "filename": "car.pdf",
-  "path": "/especially/able/traditional/car.pdf",
-  "sizekB": 4223,
-  "last_modified_date": "2024-10-02",
-  "creation_date": "2017-05-04",
+  "filename": "car.txt",
+  "path": "/increase/car.txt",
+  "sizekB": 7931,
+  "last_modified_date": "2020-03-08",
+  "creation_date": "2019-04-24",
   "content_chunks": [
-    "Model car car car car engine.",
-    "Race model model engine engine engine race.",
-    "Car car car speed race car."
+    "Car model race car model.",
+    "Speed engine car car."
   ],
-  "file_type": "pdf",
+  "file_type": "txt",
   "tags": [
     "cars"
   ]

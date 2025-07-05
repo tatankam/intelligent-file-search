@@ -1,17 +1,17 @@
 {
-  "filename": "designer.xlsx",
-  "path": "/great/figure/cold/designer.xlsx",
-  "sizekB": 5368,
-  "last_modified_date": "2017-09-02",
-  "creation_date": "2011-02-28",
+  "filename": "trend.md",
+  "path": "/wear/reason/trend.md",
+  "sizekB": 7191,
+  "last_modified_date": "2016-07-16",
+  "creation_date": "2014-06-07",
   "content_chunks": [
-    "designer,collection,season\nChanel,Spring,2023\nmodel,brand,year\nModel 3,Tesla,2022",
-    "designer,collection,season\nChanel,Spring,2023\nmodel,brand,year\nModel 3,Tesla,2022",
-    "designer,collection,season\nChanel,Spring,2023\nmodel,brand,year\nModel 3,Tesla,2022"
+    "Trend model designer runway. Scene award director director director award. Athlete championship football basketball tennis.",
+    "Runway model trend runway designer. Scene director movie scene movie. Basketball basketball football tennis football football tennis."
   ],
-  "file_type": "xlsx",
+  "file_type": "md",
   "tags": [
     "fashion",
-    "cars"
+    "cinema",
+    "sport"
   ]
 }

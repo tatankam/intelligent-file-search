@@ -1,14 +1,16 @@
 {
-  "filename": "runway.pptx",
-  "path": "/themselves/runway.pptx",
-  "sizekB": 4627,
-  "last_modified_date": "2025-06-29",
-  "creation_date": "2021-04-25",
+  "filename": "movie.txt",
+  "path": "/message/safe/travel/movie.txt",
+  "sizekB": 2955,
+  "last_modified_date": "2018-10-12",
+  "creation_date": "2012-05-14",
   "content_chunks": [
-    "Runway dress trend trend trend."
+    "Movie actor movie director director. Model runway runway.",
+    "Movie scene movie award. Designer model trend runway trend."
   ],
-  "file_type": "pptx",
+  "file_type": "txt",
   "tags": [
+    "cinema",
     "fashion"
   ]
 }

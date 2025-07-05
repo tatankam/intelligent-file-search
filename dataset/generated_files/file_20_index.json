@@ -1,15 +1,14 @@
 {
-  "filename": "award.pptx",
-  "path": "/opportunity/award.pptx",
-  "sizekB": 5196,
-  "last_modified_date": "2025-04-05",
-  "creation_date": "2020-05-07",
+  "filename": "director.txt",
+  "path": "/themselves/director.txt",
+  "sizekB": 9182,
+  "last_modified_date": "2023-06-07",
+  "creation_date": "2011-12-12",
   "content_chunks": [
-    "Award actor movie movie director actor scene.",
-    "Scene scene movie award.",
-    "Actor actor movie director director director award director."
+    "Director award director award.",
+    "Movie actor actor actor movie."
   ],
-  "file_type": "pptx",
+  "file_type": "txt",
   "tags": [
     "cinema"
   ]

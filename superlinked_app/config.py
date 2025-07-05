@@ -7,7 +7,7 @@ DEFAULT_ENV_FILENAME = ".env"
 
 
 class Settings(BaseSettings):
-    text_embedder_name: str = "sentence-transformers/all-mpnet-base-v2"
+    text_embedder_name: str = "sentence-transformers/paraphrase-MiniLM-L3-v2"
     chunk_size: int = 1000
     path_categories: str = ("./dataset/categories.json")
     path_dataset: str = ("./dataset/combined_index.jsonl")
@@ -16,7 +16,8 @@ class Settings(BaseSettings):
     openai_api_key: SecretStr
     qdrant_url: str = "https://582c83bf-e97f-401a-9ff7-8480522f5e88.europe-west3-0.gcp.cloud.qdrant.io"
     qdrant_api_key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.0hEkwzpfBRRQxXnDky4G0Hiuou6yfnWmvATWODEnVnM"
-    qdrant_timeout: int = 600 
+    qdrant_timeout: int = 600
+#    app_id: str = "filesearch" 
     model_config = SettingsConfigDict(
         env_file=DEFAULT_ENV_FILENAME, env_file_encoding="utf-8"
     )

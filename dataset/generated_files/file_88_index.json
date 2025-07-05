@@ -1,16 +1,15 @@
 {
-  "filename": "runway.pdf",
-  "path": "/successful/runway.pdf",
-  "sizekB": 6376,
-  "last_modified_date": "2021-10-09",
-  "creation_date": "2021-05-17",
+  "filename": "trend.txt",
+  "path": "/ok/trend.txt",
+  "sizekB": 1741,
+  "last_modified_date": "2025-10-22",
+  "creation_date": "2023-07-22",
   "content_chunks": [
-    "Runway runway dress trend runway. Race engine speed model engine. Award award movie director actor award actor."
+    "Model trend runway model runway.",
+    "Dress runway designer runway."
   ],
-  "file_type": "pdf",
+  "file_type": "txt",
   "tags": [
-    "fashion",
-    "cars",
-    "cinema"
+    "fashion"
   ]
 }

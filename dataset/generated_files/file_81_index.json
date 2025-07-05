@@ -1,15 +1,15 @@
 {
-  "filename": "football.pdf",
-  "path": "/most/football.pdf",
-  "sizekB": 6633,
-  "last_modified_date": "2024-04-22",
-  "creation_date": "2021-08-23",
+  "filename": "nameeven.xlsx",
+  "path": "/might/environment/nameeven.xlsx",
+  "sizekB": 351,
+  "last_modified_date": "2018-09-11",
+  "creation_date": "2002-04-14",
   "content_chunks": [
-    "Football basketball championship championship basketball athlete athlete tennis.",
-    "Athlete basketball football championship basketball."
+    "name,event,score\nJohn,football,3\nLisa,tennis,2\ntitle,director,year\nInception,Christopher Nolan,2010"
   ],
-  "file_type": "pdf",
+  "file_type": "xlsx",
   "tags": [
-    "sport"
+    "sport",
+    "cinema"
   ]
 }

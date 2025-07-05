@@ -1,16 +1,15 @@
 {
-  "filename": "director.docx",
-  "path": "/maybe/director.docx",
-  "sizekB": 3562,
-  "last_modified_date": "2023-11-21",
-  "creation_date": "2021-11-05",
+  "filename": "nameeven.xlsx",
+  "path": "/law/nameeven.xlsx",
+  "sizekB": 4421,
+  "last_modified_date": "2024-06-05",
+  "creation_date": "2010-02-12",
   "content_chunks": [
-    "Director scene actor scene. Runway designer dress designer dress runway. Race race race engine engine race car car."
+    "name,event,score\nJohn,football,3\nLisa,tennis,2",
+    "name,event,score\nJohn,football,3\nLisa,tennis,2"
   ],
-  "file_type": "docx",
+  "file_type": "xlsx",
   "tags": [
-    "cinema",
-    "fashion",
-    "cars"
+    "sport"
   ]
 }

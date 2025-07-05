@@ -1,16 +1,15 @@
 {
-  "filename": "designer.xlsx",
-  "path": "/consumer/designer.xlsx",
-  "sizekB": 6723,
-  "last_modified_date": "2020-08-19",
-  "creation_date": "2012-06-14",
+  "filename": "basketba.txt",
+  "path": "/talk/also/basketba.txt",
+  "sizekB": 7383,
+  "last_modified_date": "2014-01-18",
+  "creation_date": "2004-10-18",
   "content_chunks": [
-    "designer,collection,season\nChanel,Spring,2023\nmodel,brand,year\nModel 3,Tesla,2022",
-    "designer,collection,season\nChanel,Spring,2023\nmodel,brand,year\nModel 3,Tesla,2022"
+    "Basketball athlete football football tennis basketball. Director actor actor movie."
   ],
-  "file_type": "xlsx",
+  "file_type": "txt",
   "tags": [
-    "cars",
-    "fashion"
+    "sport",
+    "cinema"
   ]
 }

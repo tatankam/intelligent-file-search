@@ -1,16 +1,15 @@
 {
-  "filename": "titledir.xlsx",
-  "path": "/environment/close/titledir.xlsx",
-  "sizekB": 3156,
-  "last_modified_date": "2022-10-04",
-  "creation_date": "2003-12-08",
+  "filename": "car.md",
+  "path": "/individual/bar/reality/car.md",
+  "sizekB": 5507,
+  "last_modified_date": "2020-07-31",
+  "creation_date": "2011-01-22",
   "content_chunks": [
-    "title,director,year\nInception,Christopher Nolan,2010",
-    "title,director,year\nInception,Christopher Nolan,2010",
-    "title,director,year\nInception,Christopher Nolan,2010"
+    "Car speed race speed model race. Actor actor award movie award."
   ],
-  "file_type": "xlsx",
+  "file_type": "md",
   "tags": [
+    "cars",
     "cinema"
   ]
 }

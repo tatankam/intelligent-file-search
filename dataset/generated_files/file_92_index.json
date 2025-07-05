@@ -1,15 +1,14 @@
 {
-  "filename": "titledir.xlsx",
-  "path": "/break/titledir.xlsx",
-  "sizekB": 598,
-  "last_modified_date": "2025-02-03",
-  "creation_date": "2022-07-19",
+  "filename": "runway.pdf",
+  "path": "/shake/both/runway.pdf",
+  "sizekB": 2874,
+  "last_modified_date": "2021-09-05",
+  "creation_date": "2014-11-26",
   "content_chunks": [
-    "title,director,year\nInception,Christopher Nolan,2010\ndesigner,collection,season\nChanel,Spring,2023"
+    "Model runway designer model dress trend."
   ],
-  "file_type": "xlsx",
+  "file_type": "pdf",
   "tags": [
-    "cinema",
     "fashion"
   ]
 }

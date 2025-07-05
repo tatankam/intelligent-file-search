@@ -1,15 +1,15 @@
 {
-  "filename": "titledir.xlsx",
-  "path": "/late/base/titledir.xlsx",
-  "sizekB": 8423,
-  "last_modified_date": "2024-11-10",
-  "creation_date": "2023-02-10",
+  "filename": "football.pptx",
+  "path": "/by/foreign/while/football.pptx",
+  "sizekB": 6877,
+  "last_modified_date": "2022-12-10",
+  "creation_date": "2021-02-15",
   "content_chunks": [
-    "title,director,year\nInception,Christopher Nolan,2010",
-    "title,director,year\nInception,Christopher Nolan,2010"
+    "Football tennis athlete tennis.",
+    "Tennis basketball basketball football."
   ],
-  "file_type": "xlsx",
+  "file_type": "pptx",
   "tags": [
-    "cinema"
+    "sport"
   ]
 }

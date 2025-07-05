@@ -1,16 +1,17 @@
 {
-  "filename": "trend.pdf",
-  "path": "/would/think/where/trend.pdf",
-  "sizekB": 9351,
-  "last_modified_date": "2011-07-17",
-  "creation_date": "2005-11-27",
+  "filename": "trend.txt",
+  "path": "/defense/base/trend.txt",
+  "sizekB": 4739,
+  "last_modified_date": "2016-08-11",
+  "creation_date": "2004-03-19",
   "content_chunks": [
-    "Trend runway trend runway model trend. Movie actor actor movie director award. Basketball football athlete basketball basketball football."
+    "Trend model designer dress model model model. Scene director director movie.",
+    "Model designer trend dress. Award actor scene award director actor movie.",
+    "Designer runway model designer. Movie actor actor."
   ],
-  "file_type": "pdf",
+  "file_type": "txt",
   "tags": [
     "fashion",
-    "cinema",
-    "sport"
+    "cinema"
   ]
 }

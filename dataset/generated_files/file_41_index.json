@@ -1,14 +1,15 @@
 {
-  "filename": "trend.pdf",
-  "path": "/green/trend.pdf",
-  "sizekB": 1654,
-  "last_modified_date": "2025-11-17",
-  "creation_date": "2025-09-01",
+  "filename": "nameeven.xlsx",
+  "path": "/though/rate/nameeven.xlsx",
+  "sizekB": 9438,
+  "last_modified_date": "2025-02-09",
+  "creation_date": "2018-10-08",
   "content_chunks": [
-    "Trend designer designer dress designer dress."
+    "name,event,score\nJohn,football,3\nLisa,tennis,2\ntitle,director,year\nInception,Christopher Nolan,2010"
   ],
-  "file_type": "pdf",
+  "file_type": "xlsx",
   "tags": [
-    "fashion"
+    "cinema",
+    "sport"
   ]
 }

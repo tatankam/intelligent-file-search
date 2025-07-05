@@ -1,16 +1,17 @@
 {
-  "filename": "actor.txt",
-  "path": "/may/write/actor.txt",
-  "sizekB": 7464,
-  "last_modified_date": "2023-06-27",
-  "creation_date": "2009-06-25",
+  "filename": "champion.pdf",
+  "path": "/movie/friend/special/champion.pdf",
+  "sizekB": 8120,
+  "last_modified_date": "2022-07-05",
+  "creation_date": "2013-12-16",
   "content_chunks": [
-    "Actor director scene scene. Speed race car model engine. Runway designer model trend designer model designer model."
+    "Championship tennis athlete. Dress model trend model runway trend runway.",
+    "Tennis basketball football athlete. Runway trend trend model model.",
+    "Athlete football basketball championship basketball. Trend runway designer dress."
   ],
-  "file_type": "txt",
+  "file_type": "pdf",
   "tags": [
-    "cinema",
-    "cars",
+    "sport",
     "fashion"
   ]
 }

@@ -1,18 +1,15 @@
 {
-  "filename": "race.txt",
-  "path": "/shake/race.txt",
-  "sizekB": 4327,
-  "last_modified_date": "2014-10-17",
-  "creation_date": "2006-04-11",
+  "filename": "movie.md",
+  "path": "/service/probably/movie.md",
+  "sizekB": 6858,
+  "last_modified_date": "2015-04-29",
+  "creation_date": "2010-03-20",
   "content_chunks": [
-    "Model race speed speed engine speed model car. Designer trend runway. Football athlete basketball championship basketball.",
-    "Speed race car engine. Dress model designer dress. Athlete football tennis.",
-    "Model race race race model engine. Designer designer model model designer designer designer designer. Championship athlete championship championship football football football."
+    "Movie movie actor director actor movie actor.",
+    "Scene scene director actor scene movie director."
   ],
-  "file_type": "txt",
+  "file_type": "md",
   "tags": [
-    "cars",
-    "fashion",
-    "sport"
+    "cinema"
   ]
 }

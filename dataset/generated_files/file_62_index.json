@@ -1,13 +1,14 @@
 {
-  "filename": "movie.pdf",
-  "path": "/alone/past/movie.pdf",
-  "sizekB": 5791,
-  "last_modified_date": "2022-09-12",
-  "creation_date": "2021-09-11",
+  "filename": "titledir.xlsx",
+  "path": "/increase/titledir.xlsx",
+  "sizekB": 8580,
+  "last_modified_date": "2022-09-29",
+  "creation_date": "2002-11-28",
   "content_chunks": [
-    "Movie award award director director."
+    "title,director,year\nInception,Christopher Nolan,2010",
+    "title,director,year\nInception,Christopher Nolan,2010"
   ],
-  "file_type": "pdf",
+  "file_type": "xlsx",
   "tags": [
     "cinema"
   ]

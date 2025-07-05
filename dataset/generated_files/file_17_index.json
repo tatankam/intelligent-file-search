@@ -1,15 +1,15 @@
 {
-  "filename": "runway.txt",
-  "path": "/difference/agent/runway.txt",
-  "sizekB": 971,
-  "last_modified_date": "2023-06-02",
-  "creation_date": "2020-02-20",
+  "filename": "titledir.xlsx",
+  "path": "/husband/it/titledir.xlsx",
+  "sizekB": 9717,
+  "last_modified_date": "2024-04-28",
+  "creation_date": "2024-02-19",
   "content_chunks": [
-    "Designer designer runway.",
-    "Designer dress designer dress model dress model."
+    "title,director,year\nInception,Christopher Nolan,2010\nmodel,brand,year\nModel 3,Tesla,2022"
   ],
-  "file_type": "txt",
+  "file_type": "xlsx",
   "tags": [
-    "fashion"
+    "cinema",
+    "cars"
   ]
 }

@@ -1,16 +1,15 @@
 {
-  "filename": "trend.pptx",
-  "path": "/what/trend.pptx",
-  "sizekB": 8430,
-  "last_modified_date": "2014-09-21",
-  "creation_date": "2011-05-12",
+  "filename": "modelbra.xlsx",
+  "path": "/beautiful/free/approach/modelbra.xlsx",
+  "sizekB": 1853,
+  "last_modified_date": "2002-10-27",
+  "creation_date": "2001-03-04",
   "content_chunks": [
-    "Designer trend model trend model. Championship championship tennis championship tennis championship football. Director actor movie actor movie director."
+    "model,brand,year\nModel 3,Tesla,2022",
+    "model,brand,year\nModel 3,Tesla,2022"
   ],
-  "file_type": "pptx",
+  "file_type": "xlsx",
   "tags": [
-    "fashion",
-    "sport",
-    "cinema"
+    "cars"
   ]
 }
