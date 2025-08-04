@@ -71,8 +71,7 @@ Explore and experiment with two helpful notebooks:
   "Last_Modified_Date": 1688102399,
   "Content": "Q1 2024 budget breakdown for marketing and operations..."
 }
-
-
+```
 ## Query with Simple Query (Without LLM)
 
 This extension supports querying documents using a simplified query interface without relying on Large Language Models (LLMs). This feature enables quick and efficient searching based on straightforward query parameters.
