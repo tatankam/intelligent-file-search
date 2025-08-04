@@ -71,3 +71,25 @@ Explore and experiment with two helpful notebooks:
   "Last_Modified_Date": 1688102399,
   "Content": "Q1 2024 budget breakdown for marketing and operations..."
 }
+
+
+## Query with Simple Query (Without LLM)
+
+This extension supports querying documents using a simplified query interface without relying on Large Language Models (LLMs). This feature enables quick and efficient searching based on straightforward query parameters.
+
+### How It Works
+
+You can pass a dictionary of parameters including a `simple_query` string and optional controls such as `limit` to fetch relevant documents. These parameters are expanded internally using the `expand_simple_query_params` function from the modified `query.py`, which transforms the input into detailed search parameters understood by the retrieval system.
+
+For an example of how to use this feature, refer to the [Query with simple_query without LLM section](https://github.com/tatankam/intelligent-file-search/blob/main/notebooks/superlinked-queries.ipynb#query-with-simple_query-without-llm) in the project notebook.
+
+### Modifications in `query.py`
+
+The `query.py` module was enhanced to include the `expand_simple_query_params` function, which processes the `simple_query` and expands it into detailed search parameters. These changes improve the API usability by allowing natural language-like queries without the complexity of LLM-based parsing.
+
+### Purpose of `nlq_nollm.py`
+
+The `nlq_nollm.py` module was created to provide Natural Language Query (NLQ) functionality **without** using Large Language Models (LLMs). This is intended to improve responsiveness, reduce computational overhead, and enable usage in environments where LLMs are not available or feasible.
+
+`nlq_nollm.py` relies on the enhanced query processing in `query.py` to interpret and execute NLQ using traditional parsing and parameter expansion, offering a balance between usability and system requirements.
+
