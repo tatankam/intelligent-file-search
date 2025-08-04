@@ -1,4 +1,5 @@
 from collections import namedtuple
+from typing import Any, Dict
 from superlinked import framework as sl
 from superlinked_app.index import (
     index,
@@ -21,12 +22,46 @@ from superlinked_app.nlq import (
     openai_config,
     get_cat_options,
 )
+from superlinked_app.nlq_nollm import (
+    parse_simple_nollm,
+    filetype_include_any_param,
+    min_creation_date_param,
+    max_creation_date_param,
+)
+
 
 # Get categorical options
 cat_options = get_cat_options()
 
+
+def expand_simple_query_params(params: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    If 'simple_query' param is present, expand it into structured query params.
+    Removes 'simple_query' and adds parsed params with proper conversions.
+    """
+    if "simple_query" not in params:
+        return params
+
+    parsed = parse_simple_nollm(params["simple_query"])
+
+    min_creation_ms = parsed.get("min_creation_date")
+    max_creation_ms = parsed.get("max_creation_date")
+
+    expanded = {k: v for k, v in params.items() if k != "simple_query"}
+
+    expanded["filetype_include_any"] = parsed.get("filetype_include_any")
+    expanded["min_creation_date"] = min_creation_ms // 1000 if min_creation_ms else None
+    expanded["max_creation_date"] = max_creation_ms // 1000 if max_creation_ms else None
+
+    # Remove None values
+    expanded = {k: v for k, v in expanded.items() if v is not None}
+
+    return expanded
+
+
 # Debug query (optional)
 query_debug = sl.Query(index).find(file_schema).limit(3).select_all()
+
 
 # Main semantic search query
 query = (
@@ -53,20 +88,24 @@ query = (
     )
 )
 
+
 # Limit and return all fields and metadata
 query = query.limit(sl.Param("limit", default=5))
 query = query.select_all()
 query = query.include_metadata()
 
+
 # Numerical filter: file size
 query = query.filter(file_schema.Size_kB >= sl.Param("min_size_kb"))
 query = query.filter(file_schema.Size_kB <= sl.Param("max_size_kb"))
 
-# Temporal filters: creation & modification
-query = query.filter(file_schema.Creation_Date >= sl.Param("min_creation_date"))
-query = query.filter(file_schema.Creation_Date <= sl.Param("max_creation_date"))
+
+# Temporal filters: creation & modification using declared params
+query = query.filter(file_schema.Creation_Date >= min_creation_date_param)
+query = query.filter(file_schema.Creation_Date <= max_creation_date_param)
 query = query.filter(file_schema.Last_Modified_Date >= sl.Param("min_modified_date"))
 query = query.filter(file_schema.Last_Modified_Date <= sl.Param("max_modified_date"))
+
 
 # Categorical filters for File Type and Tags
 CategoryFilter = namedtuple(
@@ -119,6 +158,13 @@ for filter_item in filters:
         options=cat_options.get(filter_item.category_name, []),
     )
     query = query.filter(filter_item.operator(param))
+
+
+# Declare simple_query param explicitly (optional)
+simple_query_param = sl.Param(
+    "simple_query",
+    description="Simple natural language query to parse into structured filters",
+)
 
 # Natural language interface
 query = query.with_natural_query(
