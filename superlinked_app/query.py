@@ -1,174 +1,122 @@
-from collections import namedtuple
-from typing import Any, Dict
 from superlinked import framework as sl
 from superlinked_app.index import (
-    index,
+    file_index,
     file_schema,
-    content_space,
-    filename_space,
+    contenttype_space,
+    kind_space,
+    category_space,
+    name_space,
     size_space,
     creation_date_space,
     modified_date_space,
 )
-from superlinked_app.nlq import (
-    content_description,
-    filename_description,
-    filetype_description,
-    tags_description,
-    size_description,
-    creation_date_description,
-    modified_date_description,
-    system_prompt,
-    openai_config,
-    get_cat_options,
-)
-from superlinked_app.nlq_nollm import (
-    parse_simple_nollm,
-    filetype_include_any_param,
-    min_creation_date_param,
-    max_creation_date_param,
-)
+
+query_debug = (
+    sl.Query(file_index)
+    .find(file_schema)
+    .limit(3)
+    .select_all()
+    .include_metadata()
+    )
 
 
-# Get categorical options
-cat_options = get_cat_options()
-
-
-def expand_simple_query_params(params: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    If 'simple_query' param is present, expand it into structured query params.
-    Removes 'simple_query' and adds parsed params with proper conversions.
-    """
-    if "simple_query" not in params:
-        return params
-
-    parsed = parse_simple_nollm(params["simple_query"])
-
-    min_creation_ms = parsed.get("min_creation_date")
-    max_creation_ms = parsed.get("max_creation_date")
-
-    expanded = {k: v for k, v in params.items() if k != "simple_query"}
-
-    expanded["filetype_include_any"] = parsed.get("filetype_include_any")
-    expanded["min_creation_date"] = min_creation_ms // 1000 if min_creation_ms else None
-    expanded["max_creation_date"] = max_creation_ms // 1000 if max_creation_ms else None
-
-    # Remove None values
-    expanded = {k: v for k, v in expanded.items() if v is not None}
-
-    return expanded
-
-
-# Debug query (optional)
-query_debug = sl.Query(index).find(file_schema).limit(3).select_all()
 
 
 # Main semantic search query
 query = (
     sl.Query(
-        index,
+        file_index,
         weights={
-            content_space: sl.Param("content_weight", description=content_description),
-            filename_space: sl.Param("filename_weight", description=filename_description),
-            size_space: sl.Param("size_weight", description=size_description),
-            creation_date_space: sl.Param("creation_date_weight", description=creation_date_description),
-            modified_date_space: sl.Param("modified_date_weight", description=modified_date_description),
+            contenttype_space: sl.Param("contenttype_weight", default=1.0),
+            kind_space: sl.Param("kind_weight", default=1.0),
+            category_space: sl.Param("category_weight", default=1.0),
+            name_space: sl.Param("name_weight", default=1.0),
+            size_space: sl.Param("size_weight", default=1.0),
+            creation_date_space: sl.Param("creation_date_weight", default=1.0),
+            modified_date_space: sl.Param("modified_date_weight", default=1.0),
         },
     )
     .find(file_schema)
-    .similar(
-        content_space.text,
-        sl.Param("content_query", description=content_description),
-        weight=sl.Param("similar_content_weight", default=1.0),
-    )
-    .similar(
-        filename_space.text,
-        sl.Param("filename_query", description=filename_description),
-        weight=sl.Param("similar_filename_weight", default=1.0),
-    )
+    .similar(contenttype_space, sl.Param("contenttype_query"))
+    .similar(kind_space, sl.Param("kind_query"))
+    .similar(category_space, sl.Param("category_query"))
+    .similar(name_space, sl.Param("name_query"))
+    # REMOVE .similar() for size_space, creation_date_space, modified_date_space
+    # Instead, use filters for those fields if needed:
+    .filter(file_schema.Size > 0)  # Exclude zero-size files
+    .filter(file_schema.Size >= sl.Param("min_size_kb", default=0))
+    .filter(file_schema.Size <= sl.Param("max_size_kb", default=1_000_000_000))
+    .filter(file_schema.CreationDate >= sl.Param("min_creation_date", default=0))
+    .filter(file_schema.CreationDate <= sl.Param("max_creation_date", default=4102444800))  # e.g. year 2100
+    .filter(file_schema.ContentChangeDate >= sl.Param("min_modified_date", default=0))
+    .filter(file_schema.ContentChangeDate <= sl.Param("max_modified_date", default=4102444800))
+    .limit(sl.Param("limit", default=5))
+    .select_all()
+    .include_metadata()
 )
 
-
 # Limit and return all fields and metadata
-query = query.limit(sl.Param("limit", default=5))
-query = query.select_all()
-query = query.include_metadata()
+# query = query.limit(sl.Param("limit", default=5))
+# query = query.select_all()
+# query = query.include_metadata()
 
 
-# Numerical filter: file size
-query = query.filter(file_schema.Size_kB >= sl.Param("min_size_kb"))
-query = query.filter(file_schema.Size_kB <= sl.Param("max_size_kb"))
+# # Numerical filter: file size
+# query = query.filter(file_schema.Size >= sl.Param("min_size_kb"))
+# query = query.filter(file_schema.Size <= sl.Param("max_size_kb"))
 
 
-# Temporal filters: creation & modification using declared params
-query = query.filter(file_schema.Creation_Date >= min_creation_date_param)
-query = query.filter(file_schema.Creation_Date <= max_creation_date_param)
-query = query.filter(file_schema.Last_Modified_Date >= sl.Param("min_modified_date"))
-query = query.filter(file_schema.Last_Modified_Date <= sl.Param("max_modified_date"))
+# # Temporal filters: creation & modification using declared params
+# query = query.filter(file_schema.CreationDate >= sl.Param("min_creation_date"))
+# query = query.filter(file_schema.CreationDate <= sl.Param("max_creation_date"))
+# query = query.filter(file_schema.ContentChangeDate >= sl.Param("min_modified_date"))
+# query = query.filter(file_schema.ContentChangeDate <= sl.Param("max_modified_date"))
 
 
 # Categorical filters for File Type and Tags
-CategoryFilter = namedtuple(
-    "CategoryFilter", ["operator", "param_name", "category_name", "description"]
-)
+# CategoryFilter = namedtuple(
+#     "CategoryFilter", ["operator", "param_name", "category_name", "description"]
+# )
 
-filters = [
-    CategoryFilter(
-        operator=file_schema.File_Type.contains_all,
-        param_name="filetype_include_all",
-        category_name="FileType",
-        description="File must match all of these file types",
-    ),
-    CategoryFilter(
-        operator=file_schema.File_Type.contains,
-        param_name="filetype_include_any",
-        category_name="FileType",
-        description="File can match any of these file types",
-    ),
-    CategoryFilter(
-        operator=file_schema.File_Type.not_contains,
-        param_name="filetype_exclude",
-        category_name="FileType",
-        description="File must not match any of these file types",
-    ),
-    CategoryFilter(
-        operator=file_schema.Tags.contains_all,
-        param_name="tags_include_all",
-        category_name="Tags",
-        description="Files must contain all of these tags",
-    ),
-    CategoryFilter(
-        operator=file_schema.Tags.contains,
-        param_name="tags_include_any",
-        category_name="Tags",
-        description="Files must contain at least one of these tags",
-    ),
-    CategoryFilter(
-        operator=file_schema.Tags.not_contains,
-        param_name="tags_exclude",
-        category_name="Tags",
-        description="Files must not contain any of these tags",
-    ),
-]
+# filters = [
+#     CategoryFilter(
+#         operator=file_schema.Kind.contains_all,
+#         param_name="filetype_include_all",
+#         category_name="FileType",
+#         description="File must match all of these file types",
+#     ),
+#     CategoryFilter(
+#         operator=file_schema.Kind.contains,
+#         param_name="filetype_include_any",
+#         category_name="FileType",
+#         description="File can match any of these file types",
+#     ),
+#     CategoryFilter(
+#         operator=file_schema.Kind.not_contains,
+#         param_name="filetype_exclude",
+#         category_name="FileType",
+#         description="File must not match any of these file types",
+#     ),
+# ]
 
-for filter_item in filters:
-    param = sl.Param(
-        filter_item.param_name,
-        description=filter_item.description,
-        options=cat_options.get(filter_item.category_name, []),
-    )
-    query = query.filter(filter_item.operator(param))
+# for filter_item in filters:
+#     param = sl.Param(
+#         filter_item.param_name,
+#         description=filter_item.description,
+#         options=cat_options.get(filter_item.category_name, []),
+#     )
+#     query = query.filter(filter_item.operator(param))
 
 
 # Declare simple_query param explicitly (optional)
-simple_query_param = sl.Param(
-    "simple_query",
-    description="Simple natural language query to parse into structured filters",
-)
+# simple_query_param = sl.Param(
+#     "simple_query",
+#     description="Simple natural language query to parse into structured filters",
+# )
 
-# Natural language interface
-query = query.with_natural_query(
-    natural_query=sl.Param("natural_query"),
-    client_config=openai_config,
-    system_prompt=system_prompt,
-)
+# # Natural language interface
+# query = query.with_natural_query(
+#     natural_query=sl.Param("natural_query"),
+#     client_config=openai_config,
+#     system_prompt=system_prompt,
+# )

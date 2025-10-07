@@ -1,13 +1,15 @@
 from superlinked import framework as sl
 
-from superlinked_app.index import file_schema, index
+from superlinked_app.index import file_schema, file_index
 from superlinked_app.query import query, query_debug
 from superlinked_app.config import settings
 
 rest_source_speech = sl.RestSource(file_schema)
 
 vector_database = sl.QdrantVectorDatabase(
-    url=settings.qdrant_url, api_key=settings.qdrant_api_key,timeout=settings.qdrant_timeout
+    url=settings.qdrant_url, 
+    api_key=settings.qdrant_api_key,
+    timeout=settings.qdrant_timeout
 )
 
 config = sl.DataLoaderConfig(
@@ -22,7 +24,7 @@ executor = sl.RestExecutor(
         rest_source_speech,
         loader_source_speech,
     ],
-    indices=[index],
+    indices=[file_index],
     queries=[
         sl.RestQuery(sl.RestDescriptor("file-search"), query),
         sl.RestQuery(sl.RestDescriptor("file-search-debug"), query_debug),

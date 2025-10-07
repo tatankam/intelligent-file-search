@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     text_embedder_name: str = "sentence-transformers/paraphrase-MiniLM-L3-v2"
     chunk_size: int = 1000
     path_categories: str = ("./dataset/categories.json")
-    path_dataset: str = ("./dataset/combined_index.jsonl")
+    path_dataset: str = ("./dataset/linux_dump.jsonl")
     openai_model: str = "gpt-4o"
     open_ai_base_url: str = "https://api.openai.com/v1"
     openai_api_key: SecretStr
@@ -23,6 +23,7 @@ class Settings(BaseSettings):
     )
 
 
+
 def get_env_file_path() -> str:
     dirname = os.path.dirname(__file__)
     rel_path = os.path.join(dirname, DEFAULT_ENV_FILENAME)
@@ -31,5 +32,3 @@ def get_env_file_path() -> str:
 
 
 settings = Settings(_env_file=get_env_file_path())
-
-print(os.path.abspath(settings.path_categories))
